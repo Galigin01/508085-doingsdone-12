@@ -1,6 +1,7 @@
 <?php
 require_once 'variables.php';
 
+
 // массив задач
 $tasks_arr = base_extr($mysqli, 'task', $user['id']);
 // массив проектов с названиями задач
@@ -20,7 +21,7 @@ $main = include_template(
     [
         'tasks_arr' => $tasks_arr, 
         'show_complete_tasks' => $show_complete_tasks,
-
+        'mode_view' => $mode_view['is_register'],
         'checker_get_param' => $checker_get_param,
         'project_id' => $project_id,
         'logic_for_header' => $logic_for_header,
@@ -34,7 +35,7 @@ $layout = include_template(
         'title' => 'Дела в порядке',
         'user' => $user,//['user_name'],
         'main' => $main,
-
+        'mode_view' => $mode_view['is_register'],
         'mysqli' => $mysqli,
         'projects_arr'=> $projects_arr,
         'project_id' => $project_id,

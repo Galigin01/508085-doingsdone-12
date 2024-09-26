@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        // исполняем подготовленное выражение
        mysqli_stmt_execute($stmt);
 
-       header("Location: /extra_academy/");    
+       header("Location: /508085-doingsdone-12/");    
     } 
 
     
@@ -84,7 +84,8 @@ $add_temp = include_template(
         'all_projects_arr' => $all_projects_arr,
         'tname' => $tname,
         'date' => $date,
-        'errors' => $errors
+        'errors' => $errors,
+        'mode_view' => $mode_view['is_register']
     ]
 );
 

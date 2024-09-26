@@ -33,7 +33,7 @@ require_once 'variables.php';
     </div>
 
     <table class="tasks">
-
+        <?php if($mode_view == true):?>
         <?php foreach ($tasks_arr as $one_task) :
             if ($show_complete_tasks == 0 and $one_task["status_ready"] == 1) continue; ?>
             <tr class="tasks__item task<?php if ($one_task["status_ready"]) echo ' task--completed'; elseif (count_hours($one_task["dt_deadline"]) < 24) echo ' task--important'; ?>">
@@ -53,6 +53,8 @@ require_once 'variables.php';
                 </td>
             </tr>
         <?php endforeach; ?>
+        <?php endif ?>
+
         <!--показывать следующий тег <tr/>, если переменная $show_complete_tasks равна единице-->
     </table>
 </main>

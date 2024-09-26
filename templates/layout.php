@@ -29,7 +29,7 @@
                         <div class="user-menu__data">
                             <p><?= htmlspecialchars($user['name']); ?></p>
 
-                            <a href="#">Выйти</a>
+                            <a href=<?php if($mode_view == true): echo "pages/guest.html"; endif ?> >Выйти</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
 
                     <nav class="main-navigation">
                         <ul class="main-navigation__list">
-
+                            <?php if($mode_view == true):?>
                             <?php foreach ($projects_arr_name_by_tasks as $one_project): ?>
                                 <li class="main-navigation__list-item<?php if ($project_id == $one_project['project_id']) echo ' main-navigation__list-item--active' ?>">
                                     <a class="main-navigation__list-item-link" href="?project=<?= $one_project['project_id'] ?>"><?= htmlspecialchars($one_project['project_name']); ?></a>
@@ -50,6 +50,7 @@
 
                                 </li>
                             <?php endforeach; ?>
+                            <?php endif ?>
                         </ul>
                     </nav>
 
